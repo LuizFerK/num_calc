@@ -2,23 +2,27 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-title = 'Euler'
-n = 5
-y = [0]
+# Entradas
+n = 50
+y = [1]
 min_x = 0
 max_x = 1
 
-# ------------------------
-
+# e
 euler_number = math.exp(1)
 x = []
 
+# y'
 def f(x):
-  return math.cos(x)
+  return euler_number ** x + 1
 
+# y
 def exact(x):
-  return math.sin(x)
+  return euler_number ** x + x
 
+# ------------------------
+
+# Intervalo
 h = (max_x - min_x) / (n - 1)
 
 for i in range(n - 1):
@@ -27,27 +31,28 @@ for i in range(n - 1):
 
 x.append(max_x)
 
-# Generate x values from -10 to 10
+# Gera valores x de -10 to 10
 x_values = np.linspace(-10, 10, 400)
-# Calculate y values using the function y
+
+# Calcula valores y usando a função y
 y_values = list(map(exact, x_values))
 
 # Plot config
 plt.figure(figsize=(12, 12))
 plt.plot(x_values, y_values, label='exact')
 plt.scatter(x, y, label='f(x)')
-plt.title(title)
+plt.title('Euler')
 plt.xlabel('x')
 plt.ylabel('y')
 plt.grid(True)
 plt.legend()
 plt.axhline(0, color='black',linewidth=0.5)
 plt.axvline(0, color='black',linewidth=0.5)
-max_x = 3
-min_x = -3
-max_y = 3
-min_y = -3
+max_x = 2.5
+min_x = -0.5
+max_y = 10
+min_y = 0
 plt.axis([min_x, max_x, min_y, max_y])
-plt.xticks(np.arange(min_x, max_x, 1))
+plt.xticks(np.arange(min_x, max_x, 0.25))
 plt.yticks(np.arange(min_y, max_y, 1))
 plt.show()
