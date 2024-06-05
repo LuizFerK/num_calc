@@ -3,7 +3,7 @@ import numpy as np
 import math
 
 # Entradas
-n = 50
+n = 5
 y = [1]
 min_x = 0
 max_x = 1
@@ -48,9 +48,9 @@ plt.grid(True)
 plt.legend()
 plt.axhline(0, color='black',linewidth=0.5)
 plt.axvline(0, color='black',linewidth=0.5)
-max_x = 2.5
+max_x = 2
 min_x = -0.5
-max_y = 10
+max_y = 5
 min_y = 0
 plt.axis([min_x, max_x, min_y, max_y])
 plt.xticks(np.arange(min_x, max_x, 0.25))

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Entradas
-x = 30
+x = 5.8
 
 # ------------------------------------
 
@@ -59,7 +59,7 @@ plt.figure(figsize=(12, 12))
 plt.scatter(x_points, y_points, label='pontos C15')
 plt.scatter([x], [y1], label="valor interpolado P1")
 plt.scatter([x], [y2], label="valor interpolado P2")
-plt.plot(x_points, y_points, label='p1(x) = x**2 + x + 2')
+# plt.plot(x_points, y_points, label='p1(x) = x**2 + x + 2')
 plt.title('Interpolação')
 plt.xlabel('x')
 plt.ylabel('y')
@@ -67,11 +67,11 @@ plt.grid(True)
 plt.legend()
 plt.axhline(0, color='black',linewidth=0.5)
 plt.axvline(0, color='black',linewidth=0.5)
-max_x = 40
-min_x = 10
-max_y = 0.1
-min_y = 0
-plt.axis([min_x, max_x, min_y, max_y])
-plt.xticks(np.arange(min_x, max_x, 3))
-plt.yticks(np.arange(min_y, max_y, 0.01))
+# max_x = 40
+# min_x = 10
+# max_y = 0.1
+# min_y = 0
+# plt.axis([min_x, max_x, min_y, max_y])
+# plt.xticks(np.arange(min_x, max_x, 3))
+# plt.yticks(np.arange(min_y, max_y, 0.01))
 plt.show()
